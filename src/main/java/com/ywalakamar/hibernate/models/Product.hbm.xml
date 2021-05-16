@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping package="com.ywalakamar.hibernate.models">
+    <class name="Product" table="products">
+        <id name="productId" column="product_id" type="java.lang.Integer">
+            <generator class="native"></generator>
+        </id>
+        <property name="name" column="name" />
+        <property name="productDescription" column="description" />
+        <property name="price" column="price" />
+
+        <one-to-one name="productDetail" cascade="all" class="ProductDetail" />
+    </class>
+</hibernate-mapping>
